@@ -9,8 +9,8 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
 $errors = [];
-$smtp_username = ${{ secrets.smtp_username }};
-$smtp_password = ${{ secrets.smtp_password }};
+$smtp_username = ${{ secrets.SMTP_USERNAME }};
+$smtp_password = ${{ secrets.SMTP_PASSWORD }};
 
 echo 'sending ...';
 
