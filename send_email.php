@@ -9,6 +9,8 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
 $errors = [];
+$smtp_username = ${{ secrets.SMTP_USERNAME }};
+$smtp_password = ${{ secrets.SMTP_PASSWORD }};
 
 echo 'sending ...';
 
@@ -49,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-            $mail->Username   = 'amsibiwebcontact@gmail.com';                     //SMTP username
-            $mail->Password   = 'gdtstyrmiaigdwol';                               //SMTP password
+            $mail->Username   = $smtp_username;                     //SMTP username
+            $mail->Password   = $smtp_password;                               //SMTP password
 
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption - ENCRYPTION_SMTPS (Port = 465)
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
