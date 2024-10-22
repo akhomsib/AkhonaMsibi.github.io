@@ -14,13 +14,13 @@
 
 				<!-- Header -->
 				<header id="header">
-					<a href="home.html" class="logo">Akhona Msibi</a>
+					<a href="index.html" class="logo">Akhona Msibi</a>
 				</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="home.html">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="resume.html">Resume</a></li>
 							<li><a href="projects.html">Projects</a></li>
@@ -34,7 +34,7 @@
 				
 				<!-- Main -->
 					<div id="main">
-						<form method="POST" id="contact-form" action="/contact.php">
+						<form method="POST" id="contact-form" action="https://formspree.io/f/meoqozjd">
 							<div class="fields">
 								<div class="field">
 									<label for="name">Name</label>
@@ -67,6 +67,9 @@
 								presence: { allowEmpty: false },
 								email: true
 								},
+								subject: {
+								presence: { allowEmpty: false }
+								},
 								message: {
 								presence: { allowEmpty: false }
 								}
@@ -77,6 +80,7 @@
 								const formValues = {
 								name: form.elements.name.value,
 								email: form.elements.email.value,
+								subject: form.elements.subject.value,
 								message: form.elements.message.value
 								};
 						
